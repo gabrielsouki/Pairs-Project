@@ -17,6 +17,4 @@ public class CardClass : MonoBehaviour
     }
 
     // Find the way to personalize each card class parameter
-
-    //public card gameCard = new card("Red", false);
 }

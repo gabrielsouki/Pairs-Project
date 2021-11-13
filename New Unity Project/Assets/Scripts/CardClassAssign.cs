@@ -9,6 +9,6 @@ public class CardClassAssign : MonoBehaviour
 
     private void Start()
     {
-        public CardClass.card card = new CardClass.card("Red", false);
+        CardClass.card card = new CardClass.card(m_color, done);
     }
 }
