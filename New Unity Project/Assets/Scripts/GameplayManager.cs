@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Dictionary<string, CardManager> selected = new Dictionary<string, CardManager>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

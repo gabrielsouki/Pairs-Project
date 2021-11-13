@@ -5,7 +5,9 @@ using UnityEngine;
 public class CardManager : MonoBehaviour
 {
     public bool isSelected = false;
-    public CardManager par;
+    public GameplayManager m_gameplayManager;
+    public CardClassAssign m_cardClassAssign;
+    public CardManager thisCardManager;
 
     //Detectar clic
     private void OnMouseDown()
@@ -18,6 +20,7 @@ public class CardManager : MonoBehaviour
         if(isSelected == false)
         {
             isSelected = true;
+            m_gameplayManager.selected.Add(m_cardClassAssign.newCard.color, thisCardManager);
         }
         else
         {
@@ -32,7 +35,7 @@ public class CardManager : MonoBehaviour
 
     public void Check()
     {
-        if (isSelected && par.isSelected)
+        if (isSelected)
         {
             Destroy(gameObject);
         }
