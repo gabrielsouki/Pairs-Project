@@ -20,7 +20,7 @@ public class CardManager : MonoBehaviour
         if(isSelected == false)
         {
             isSelected = true;
-            m_gameplayManager.selected.Add(m_cardClassAssign.newCard.color, thisCardManager);
+            //m_gameplayManager.selected.Add(m_cardClassAssign.newCard.color, thisCardManager);
         }
         else
         {
