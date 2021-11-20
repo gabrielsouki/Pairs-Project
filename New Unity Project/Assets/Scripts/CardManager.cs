@@ -5,9 +5,9 @@ using UnityEngine;
 public class CardManager : MonoBehaviour
 {
     public bool isSelected = false;
-    public GameplayManager m_gameplayManager;
-    public CardClassAssign m_cardClassAssign;
-    public CardManager thisCardManager;
+    [SerializeField] GameplayManager m_gameplayManager;
+    [SerializeField] CardClass m_cardClass;
+    [SerializeField] CardManager m_cardManager;
 
     //Detectar clic
     private void OnMouseDown()
@@ -20,24 +20,18 @@ public class CardManager : MonoBehaviour
         if(isSelected == false)
         {
             isSelected = true;
-            //m_gameplayManager.selected.Add(m_cardClassAssign.newCard.color, thisCardManager);
+            m_gameplayManager.selected.Add(m_cardClass);
+            m_gameplayManager.Checking();
         }
         else
         {
             isSelected = false;
+            m_gameplayManager.selected.Clear();
         }
     }
 
-    private void Update()
+    public void Destroy()
     {
-        Check();
-    }
-
-    public void Check()
-    {
-        if (isSelected)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

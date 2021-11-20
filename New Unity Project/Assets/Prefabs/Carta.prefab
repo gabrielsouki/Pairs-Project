@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -92,6 +92,8 @@ GameObject:
   - component: {fileID: 8144328290154710674}
   - component: {fileID: 1861208218}
   - component: {fileID: 4427493972034981475}
+  - component: {fileID: 145823869}
+  - component: {fileID: 550159122}
   m_Layer: 0
   m_Name: Carta
   m_TagString: carta
@@ -142,3 +144,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3950ff272cf0114c895b9a1b7f2ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelected: 0
+  m_gameplayManager: {fileID: 0}
+  m_cardClass: {fileID: 0}
+  m_cardManager: {fileID: 4427493972034981475}
+--- !u!114 &145823869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216286147548072505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6914856ea60dd640a10d1269a334080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: Red
+--- !u!114 &550159122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216286147548072505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6914856ea60dd640a10d1269a334080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: Red
