@@ -5,9 +5,50 @@ using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
 {
-    public List<CardClass> selected = new List<CardClass>();
 
-    
+    public List<CardClass> selected = new List<CardClass>();
+    public List<Transform> cardsPosition = new List<Transform>();
+    [SerializeField] GameObject cards;
+    int cardsCount;
+    [SerializeField] GameplayGrid m_gameplayGrid;
+
+    private void Start()
+    {
+        Debug.Log(m_gameplayGrid.positions.Count);
+        GetCardsCount();
+        ListCards();
+        AssignPosition();
+        
+    }
+
+    void GetCardsCount()
+    {
+        cardsCount = cards.transform.childCount;
+    }
+
+    void ListCards()
+    {
+        for (int i = 0; i < cardsCount; i++)
+        {
+            cardsPosition.Add(cards.transform.GetChild(i));
+        }
+    }
+
+    void AssignPosition()
+    {
+        foreach(Transform position in cardsPosition)
+        {
+            int randomNumber = RandomNumber();
+            position.position = m_gameplayGrid.positions[randomNumber].position;
+            m_gameplayGrid.positions.RemoveAt(randomNumber);
+        }
+    }
+
+    int RandomNumber()
+    {
+        return UnityEngine.Random.Range(0, m_gameplayGrid.positions.Count);
+    }
+
     public void Checking()
     {
         
